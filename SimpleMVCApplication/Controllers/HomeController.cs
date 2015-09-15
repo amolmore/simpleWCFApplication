@@ -32,21 +32,30 @@ namespace SimpleMVCApplication.Controllers
         //really simple action that returns json data of products from northwind
         public JsonResult GetProducts()
         {
-            var client = new SimpleServiceClient();
-            var products = client.GetProductData();
-
-            //maybe use value injector for this
-            List<ProductVM> productVMs = new List<ProductVM>();
-            foreach (var product in products)
+            try
             {
-                var productVM = new ProductVM();
-                productVM.ProductID = product.ProductID;
-                productVM.ProductName = product.ProductName;
-                productVM.UnitInStock = product.UnitInStock;
-                productVM.Discontinued = product.Discontinued;
-                productVMs.Add(productVM);
+                var client = new SimpleServiceClient();
+                var products = client.GetProductData();
+
+                //maybe use value injector for this
+                List<ProductVM> productVMs = new List<ProductVM>();
+                foreach (var product in products)
+                {
+                    var productVM = new ProductVM();
+                    productVM.ProductID = product.ProductID;
+                    productVM.ProductName = product.ProductName;
+                    productVM.UnitsInStock = product.UnitInStock;
+                    productVM.Discontinued = product.Discontinued;
+                    productVMs.Add(productVM);
+                }
+                return Json(productVMs, JsonRequestBehavior.AllowGet);
             }
-            return Json(productVMs,JsonRequestBehavior.AllowGet);
+            catch (Exception)
+            {
+                //error msg
+                return Json("false");
+                throw;
+            }
         }
 
 

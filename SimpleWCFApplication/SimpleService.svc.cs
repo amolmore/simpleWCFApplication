@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -22,25 +23,33 @@ namespace SimpleWCFApplication
 
             List<Product> products = new List<Product>();
 
-            SqlDataReader dataReader; 
-            connetionString = "Data Source=AMOL-PC\\SQLEXPRESS;Initial Catalog=NORTHWND;User ID=sa;Password=sa123";
+            SqlDataReader dataReader;
+            connetionString = ConfigurationManager.ConnectionStrings["NorthwindDb"].ConnectionString;
             sql = "Select ProductID,ProductName,UnitsInStock,Discontinued from products";
-            using (var connection = new SqlConnection(connetionString))
+            try
             {
-                connection.Open();
-                using (var command = new SqlCommand(sql, connection))
+                using (var connection = new SqlConnection(connetionString))
                 {
-                    dataReader = command.ExecuteReader();
-                    while (dataReader.Read())
+                    connection.Open();
+                    using (var command = new SqlCommand(sql, connection))
                     {
-                        var product = new Product();
-                        product.ProductID = dataReader.GetInt32(0);
-                        product.ProductName = dataReader.GetValue(1).ToString();
-                        product.UnitInStock = dataReader.GetInt16(2);
-                        product.Discontinued = dataReader.GetBoolean(3);
-                        products.Add(product);
-                    } 
-                }    
+                        dataReader = command.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var product = new Product();
+                            product.ProductID = dataReader.GetInt32(0);
+                            product.ProductName = dataReader.GetValue(1).ToString();
+                            product.UnitInStock = dataReader.GetInt16(2);
+                            product.Discontinued = dataReader.GetBoolean(3);
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //log
+                throw;
             }
             return products;
         }

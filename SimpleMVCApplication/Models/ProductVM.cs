@@ -12,7 +12,7 @@ namespace SimpleMVCApplication.Models
         public string ProductName { get; set; }
 
 
-        public int UnitInStock { get; set; }
+        public int UnitsInStock { get; set; }
 
 
         public double UnitPrice { get; set; }
