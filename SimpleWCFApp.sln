@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWCFApplication", "..\SimpleWCFApplication\SimpleWCFApplication.csproj", "{0C3498FF-B0FB-4F80-9BD4-D805203A523A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWCFApplication", "SimpleWCFApplication\SimpleWCFApplication.csproj", "{0C3498FF-B0FB-4F80-9BD4-D805203A523A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMVCApplication", "..\SimpleMVCApplication\SimpleMVCApplication.csproj", "{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMVCApplication", "SimpleMVCApplication\SimpleMVCApplication.csproj", "{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
