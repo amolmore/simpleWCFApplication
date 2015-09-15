@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWCFApplication", "..\SimpleWCFApplication\SimpleWCFApplication.csproj", "{0C3498FF-B0FB-4F80-9BD4-D805203A523A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMVCApplication", "..\SimpleMVCApplication\SimpleMVCApplication.csproj", "{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C3498FF-B0FB-4F80-9BD4-D805203A523A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3498FF-B0FB-4F80-9BD4-D805203A523A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3498FF-B0FB-4F80-9BD4-D805203A523A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3498FF-B0FB-4F80-9BD4-D805203A523A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD7B5D7-D76E-47DE-9C2E-E7EBAFC8164E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
